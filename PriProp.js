@@ -49,6 +49,10 @@ PriProp.prototype = {
   }
 };
 
+Object.getOwnPropertyNames(Function.prototype).forEach(function(k) {
+  PriProp.prototype[k] = Function.prototype[k];
+});
+
 Object.freeze(PriProp.prototype);
 
 if (typeof module == 'object' && module.exports === this) { module.exports = PriProp; }

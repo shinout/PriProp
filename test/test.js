@@ -18,6 +18,8 @@ const SomeClass = (function() {
     _(this).somePrivateValue = priv;  // set private value
   }
 
+  console.log(_.bind);
+
   SomeClass.prototype.somePublicMethod = function() {
     return _(this).somePrivateValue;
   };
