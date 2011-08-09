@@ -4,7 +4,7 @@
  * Copyright 2011, SHIN Suzuki 
  *
  */
-function PriProp(keyname) {
+const PriProp = function(keyname) {
   const _ = function(o) {
     return _.props[o[keyname]];
   };
@@ -36,7 +36,7 @@ function PriProp(keyname) {
     }
   });
   return _;
-}
+};
 
 PriProp.prototype = {
   construct: function(obj) {
