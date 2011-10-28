@@ -4,8 +4,8 @@
  * Copyright 2011, SHIN Suzuki 
  *
  */
-const PriProp = function(keyname) {
-  const _ = function(o) {
+var PriProp = function(keyname) {
+  var _ = function(o) {
     return _.props[o[keyname]];
   };
 

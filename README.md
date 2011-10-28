@@ -13,12 +13,12 @@ Sample
      * When you use this library in client side scripting, just write 
      * <script type="text/javascript" src="/path/to/PriProp.js"></script>
      */
-    const PriProp = require('/path/to/PriProp');
+    var PriProp = require('/path/to/PriProp');
 
     /* define Constructor */
-    const SomeClass = (function() {
+    var SomeClass = (function() {
       // call PriProp like this.
-      const _ = PriProp('id');
+      var _ = PriProp('id');
 
       function SomeClass(pub, priv) {
         _.construct(this); // initiallize

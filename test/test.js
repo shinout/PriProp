@@ -3,12 +3,12 @@
  * <script type="text/javascript" src="/path/to/PriProp.js"></script>
  *
  */
-const PriProp = require('../PriProp');
+var PriProp = require('../PriProp');
 
 /* define Constructor */
-const SomeClass = (function() {
+var SomeClass = (function() {
   // call PriProp like this.
-  const _ = PriProp('id');
+  var _ = PriProp('id');
 
   function SomeClass(pub, priv) {
     _.construct(this); // initiallize
@@ -18,7 +18,7 @@ const SomeClass = (function() {
     _(this).somePrivateValue = priv;  // set private value
   }
 
-  console.log(_.bind);
+  //console.log(_.bind);
 
   SomeClass.prototype.somePublicMethod = function() {
     return _(this).somePrivateValue;
@@ -29,10 +29,10 @@ const SomeClass = (function() {
 
 var obj = new SomeClass("still public...", "Hello, private values!");
 
-console.log(obj.somePublicValue); // "still public..."
-console.log(obj.somePrivateValue); // of cource, undefined...
-console.log(obj.somePublicMethod()); // Hello, private values!
-console.log(obj.id); // 1 (unique value. The first argument of PriProp() is set to this property name.)
+console.assert(obj.somePublicValue == "still public..."); // "still public..."
+console.assert(obj.somePrivateValue === undefined); // of cource, undefined...
+console.assert(obj.somePublicMethod() == "Hello, private values!"); // Hello, private values!
+console.assert(obj.id == 1); // 1 (unique value. The first argument of PriProp() is set to this property name.)
 
 var obj2 = new SomeClass('hoge', 'fuga');
-console.log(obj2.id); // 2
+console.assert(obj2.id == 2); // 2
